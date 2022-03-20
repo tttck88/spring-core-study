@@ -1,4 +1,8 @@
 package hello.core.member;
 
-public class MemberService {
+public interface MemberService {
+
+    void join(Member member);
+
+    Member findMember(Long memberId);
 }
