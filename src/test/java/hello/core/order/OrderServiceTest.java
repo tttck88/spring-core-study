@@ -29,4 +29,13 @@ public class OrderServiceTest {
         Order order = orderService.createOrder(memberId, "itemA", 10000);
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
+
+    // 필드주입 방식으로 의존관계를 만들어주면 테스트 코드에서 사용이 불가능
+    // 왜냐하면 이미 MemberRepository, DiscountPolicy가 주입되어있기떄문에 가짜 데이터를 따로 넣어줄 방법이 없음
+    // set을 새로 생성해서 넣어줄수도 있지만 그렇게하면 의미가 없음
+//    @Test
+//    void fieldInjectionTest() {
+//        OrderServiceImpl orderService = new OrderServiceImpl();
+//        orderService.createOrder(1L, "itemA", 10000);
+//    }
 }
