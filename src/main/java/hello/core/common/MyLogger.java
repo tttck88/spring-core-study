@@ -9,6 +9,7 @@ import javax.annotation.PreDestroy;
 import java.util.UUID;
 
 @Component
+// 가짜 프록시 객체를 주입시켜준 후애 실제 요청이 왔을때 내부에서 진짜 빈을 찾아서 요청을 처리해줌
 @Scope(value =  "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class MyLogger {
 
